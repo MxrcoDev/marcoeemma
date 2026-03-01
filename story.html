@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco & Emma — La nostra storia 💙</title>
+  <link rel="stylesheet" href="css/story.css" />
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <header class="site-header">
+    <a href="index.html" class="back-link">💙</a>
+    <span class="site-header__title">Marco &amp; Emma</span>
+    <span class="site-header__heart">💙</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__eyebrow reveal reveal--fade">la nostra storia</p>
+      <h1 class="hero__title reveal reveal--up">
+        Ogni giorno<br><em>un capitolo</em>
+      </h1>
+      <p class="hero__sub reveal reveal--up" style="--delay:.15s">
+        I nostri momenti indimenticabili
+      </p>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true"><span></span></div>
+    <canvas id="hero-canvas"></canvas>
+  </section>
+
+  <main class="timeline">
+    <div class="timeline__line" aria-hidden="true"></div>
+
+    <!-- ══ 01 ══ -->
+    <article class="chapter" data-index="01">
+      <div class="chapter__media reveal reveal--up">
+        <iframe
+          class="chapter__map"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d834.6050368820007!2d12.554941269667099!3d45.63299493596227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDM3JzU4LjgiTiAxMsKwMzMnMjAuMSJF!5e1!3m2!1sit!2sit!4v1772333071497!5m2!1sit!2sit"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Il nostro primo bacio"
+        ></iframe>
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">01</span>
+        <h2 class="chapter__title">Il primo bacio</h2>
+        <p class="chapter__date">✦ 24 Marzo 2025 ✦</p>
+        <p class="chapter__text">
+            Quel lunedì siamo usciti prima da scuola e, proprio nel punto segnato sulla mappa, ci siamo scambiati il nostro primo bacio. 
+            Timido e delicato (e il perchè lo sapevamo), ma per qualcosa di più serio dovremo aspettare che il tempo faccia il suo corso.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">💗 primo bacio</span>
+          <span class="tag">✨ magia</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 02 ══ -->
+    <article class="chapter" data-index="02">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/2.jpeg" alt="Il torneo a Pordenone" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">02</span>
+        <h2 class="chapter__title">Il torneo a Pordenone</h2>
+        <p class="chapter__date">✦ 20 Aprile 2025 ✦</p>
+        <p class="chapter__text">
+            È durante queste giornate del torneo di Pordenone che qualcosa ha cominciato a nascere davvero. I primi baci decisi, 
+            il momento in cui ti ho presentata ai miei amici… e mia mamma che cominciava a sospettare sempre di più che tra noi ci fosse qualcosa di serio.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">🏐 pallavolo</span>
+          <span class="tag">💞 amore</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 03 ══ -->
+    <article class="chapter" data-index="03">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/3.jpeg" alt="Il nostro giorno" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">03</span>
+        <h2 class="chapter__title">Il nostro giorno</h2>
+        <p class="chapter__date">✦ 1 Maggio 2025 ✦</p>
+        <p class="chapter__text">
+            È proprio questo giorno, 1 maggio 2025, che abbiamo deciso di far allineare le nostre vite. 
+            Abbiamo scelto di camminare insieme, di condividere sogni, piccoli gesti e segreti. 
+            Quel giorno non è stato solo una data sul calendario, ma l’inizio di qualcosa che non sapevamo (o forse si) avrebbe segnato il nostro futuro.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">💍 anello</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ CITAZIONE 1 ══ -->
+    <div class="chapter chapter--quote reveal reveal--scale">
+      <blockquote class="quote-block">
+        <span class="quote-block__mark">"</span>
+        <p class="quote-block__text">Non so dove andremo, ma so che voglio andarci con te.</p>
+        <cite class="quote-block__cite">Marco &amp; Emma</cite>
+      </blockquote>
+    </div>
+
+    <!-- ══ 04 ══ -->
+    <article class="chapter" data-index="04">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/4.jpeg" alt="La nostra prima cena" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">04</span>
+        <h2 class="chapter__title">La nostra prima cena</h2>
+        <p class="chapter__date">✦ 18 Maggio 2025 ✦</p>
+        <p class="chapter__text">
+            Dopo più di due settimane siamo finalmente riusciti a organizzare la nostra prima cena insieme. 
+            Siamo andati al sushi: tu eri stupenda mentre io, con quella camicia di lino rosa, 
+            sembravo uno zingaro.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">🍷 cena</span>
+          <span class="tag">🍣 sushi</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 05 ══ -->
+    <article class="chapter" data-index="05">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/5.jpeg" alt="La gita a Gardaland" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">05</span>
+        <h2 class="chapter__title">La gita a Gardaland</h2>
+        <p class="chapter__date">✦ 1 Giugno 2025 ✦</p>
+        <p class="chapter__text">
+            Qui stavamo andando a Gardaland e mi sa che tu e la eli avevate parecchio sonno all'andata.
+            Ci siamo divertiti tantissimo tra le urla della eli e le mie bestemmie mentre scendevamo dalle giostre.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">🎉 Gardaland</span>
+          <span class="tag">✈️ viaggio</span>
+          <span class="tag">📸 ricordi</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 06 ══ -->
+    <article class="chapter" data-index="06">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/6.jpeg" alt="Il giorno prima della partenza" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">06</span>
+        <h2 class="chapter__title">Il giorno prima della partenza</h2>
+        <p class="chapter__date">✦ 17 Luglio 2025 ✦</p>
+        <p class="chapter__text">
+            Il giorno prima della tua partenza per due settimane a Brighton è stata pura disperazione. 
+            Eri completamente in lacrime e non volevi staccarti da me. In quel momento mi hai fatto capire quanto ci tenessi davvero, 
+            e quanto il nostro legame fosse importante.
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">✈️ partenza</span>
+            <span class="tag">😢 addio</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ CITAZIONE 2 ══ -->
+    <div class="chapter chapter--quote reveal reveal--scale">
+      <blockquote class="quote-block">
+        <span class="quote-block__mark">"</span>
+        <p class="quote-block__text">Con te ho capito che casa non è un luogo, ma una persona.</p>
+        <cite class="quote-block__cite">Marco &amp; Emma</cite>
+      </blockquote>
+    </div>
+
+    <!-- ══ 07 ══ -->
+    <article class="chapter" data-index="07">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/7.jpeg" alt="La cena coi nonni" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">07</span>
+        <h2 class="chapter__title">La cena coi nonni</h2>
+        <p class="chapter__date">✦ 14 Agosto 2025 ✦</p>
+        <p class="chapter__text">
+            Qui eravamo al compleanno di mia nonna Anna a Cavallino. Eri una turbofregna assurda.
+            Ti ho presentata per la prima volta a tutti i miei nonni.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">👴 nonni</span>
+          <span class="tag">🌊 mare</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 08 ══ -->
+    <article class="chapter" data-index="08">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/8.jpeg" alt="L'after ad Eraclea" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">08</span>
+        <h2 class="chapter__title">L'after ad Eraclea</h2>
+        <p class="chapter__date">✦ 1 Settembre 2025 ✦</p>
+        <p class="chapter__text">
+            Il tuo primo after in spiaggia! Non trovavo foto nostre per cui mi limiterò a metterti una foto di me e Biasi
+            mentre guardavamo le stelle nella speranza di trovare la costellazione di Pikachu.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">🍻 alcol</span>
+          <span class="tag">🎉 festa</span>
+          <span class="tag">🌊 mare</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 09 ══ -->
+    <article class="chapter" data-index="09">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/9.jpeg" alt="Il villaggio delle zucche" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">09</span>
+        <h2 class="chapter__title">Il villaggio delle zucche</h2>
+        <p class="chapter__date">✦ 29 Ottobre 2025 ✦</p>
+        <p class="chapter__text">
+            Qui eravamo al Villaggio delle Zucche di Nonno Andrea. Guarda che carini che siamo!
+            Peccato che non siamo riusciti a rubare una zucca.
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">🎃 halloween</span>
+          <span class="tag">🍂 autunno</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ CITAZIONE 3 ══ -->
+    <div class="chapter chapter--quote reveal reveal--scale">
+      <blockquote class="quote-block">
+        <span class="quote-block__mark">"</span>
+        <p class="quote-block__text">Non sei mai stata una scelta, sei stata la mia direzione.</p>
+        <cite class="quote-block__cite">Marco &amp; Emma</cite>
+      </blockquote>
+    </div>
+
+    <!-- ══ 10 ══ -->
+    <article class="chapter" data-index="10">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/10.jpeg" alt="Shopping natalizio" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">10</span>
+        <h2 class="chapter__title">Shopping natalizio</h2>
+        <p class="chapter__date">✦ 15 Novembre 2025 ✦</p>
+        <p class="chapter__text">
+            Shopping di Natale! Ti sei presa l'alberello che durante le vacanze di Natale ho proceduto
+            a violentare con i miei piedi (scusa se sono alto).
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">🎄 natale</span>
+            <span class="tag">🎁 doni</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 11 ══ -->
+    <article class="chapter" data-index="11">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/11.jpeg" alt="Sciatina in montagna" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">11</span>
+        <h2 class="chapter__title">Sciatina in montagna</h2>
+        <p class="chapter__date">✦ 7 dicembre 2025 ✦</p>
+        <p class="chapter__text">
+            Sciatina in montagna divertentissima.
+            Grazie per avermi riportato sulle piste dopo 2 anni, mi sono divertito un mondo!
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">❄️ inverno</span>
+            <span class="tag">🎿 sciata</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 12 ══ -->
+    <article class="chapter" data-index="12">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/12.jpeg" alt="All'Outlet" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">12</span>
+        <h2 class="chapter__title">All'Outlet</h2>
+        <p class="chapter__date">✦ 12 Dicembre 2025 ✦</p>
+        <p class="chapter__text">
+            Qui eravamo all'outlet per comprare il regalo di Natale per i miei nonni e per mia mamma.
+            Ho svuotato il portafoglio.
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">💸 soldi</span>
+            <span class="tag">🎁 regalo</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ CITAZIONE 4 ══ -->
+    <div class="chapter chapter--quote reveal reveal--scale">
+      <blockquote class="quote-block">
+        <span class="quote-block__mark">"</span>
+        <p class="quote-block__text">Tra milioni di possibilità, in un altra vita sceglierei sempre te.</p>
+        <cite class="quote-block__cite">Marco &amp; Emma</cite>
+      </blockquote>
+    </div>
+
+    <!-- ══ 13 ══ -->
+    <article class="chapter" data-index="12">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/13.jpeg" alt="Di nuovo in montagna" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">13</span>
+        <h2 class="chapter__title">Di nuovo in montagna</h2>
+        <p class="chapter__date">✦ 26 Dicembre 2025 ✦</p>
+        <p class="chapter__text">
+            Di nuovo in montagna ma sto giro stanchissimi e con la tua tavola che chiedeva pietà.
+            Però il panino con il pastin era buono!
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">❄️ inverno</span>
+            <span class="tag">🎿 sciata</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 14 ══ -->
+    <article class="chapter" data-index="12">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/14.jpeg" alt="Capodanno con la eli" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">14</span>
+        <h2 class="chapter__title">Capodanno con la eli</h2>
+        <p class="chapter__date">✦ 1 Gennaio 2025 ✦</p>
+        <p class="chapter__text">
+            Non potevo non mettere la eli che si mangiava il cazzone nero.
+            ("Chi non tromba a capodanno, non tromba tutto l'anno").
+        </p>
+        <div class="chapter__tag-row">
+          <span class="tag">🥂 capodanno</span>
+          <span class="tag">🍪 biscotti</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 15 ══ -->
+    <article class="chapter" data-index="12">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/15.jpeg" alt="Epifania" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">15</span>
+        <h2 class="chapter__title">Epifania</h2>
+        <p class="chapter__date">✦ 6 Gennaio 2025 ✦</p>
+        <p class="chapter__text">
+            All'Epifania abbiamo bruciato la Eli.
+            E' stato molto divertente bruciare la Eli.
+            Eli ti prego esplodi.
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">🧙‍♀️ strega</span>
+            <span class="tag">🚿 doccia</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ CITAZIONE 5 ══ -->
+    <div class="chapter chapter--quote reveal reveal--scale">
+      <blockquote class="quote-block">
+        <span class="quote-block__mark">"</span>
+        <p class="quote-block__text">Sei il mio posto sicuro in un mondo che cambia</p>
+        <cite class="quote-block__cite">Marco &amp; Emma</cite>
+      </blockquote>
+    </div>
+
+    <!-- ══ 16 ══ -->
+    <article class="chapter" data-index="12">
+      <div class="chapter__media reveal reveal--up">
+        <img src="img/16.jpeg" alt="Compleanno di Francesco" class="chapter__img" loading="lazy" />
+        <div class="chapter__img-glow"></div>
+      </div>
+      <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+        <span class="chapter__number">16</span>
+        <h2 class="chapter__title">Compleanno di Francesco</h2>
+        <p class="chapter__date">✦ 24 Gennaio 2025 ✦</p>
+        <p class="chapter__text">
+            Guarda che forte che sei!
+            Riesci a sollevare un Marco ubriaco che guarda il suo costosissimo orologio.
+        </p>
+        <div class="chapter__tag-row">
+            <span class="tag">🍻 alcol</span>
+            <span class="tag">🎉 festa</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══ 17 ══ -->
+    <article class="chapter" data-index="12">
+        <div class="chapter__media reveal reveal--up">
+          <img src="img/17.jpeg" alt="Gita a Venezia con la gang" class="chapter__img" loading="lazy" />
+          <div class="chapter__img-glow"></div>
+        </div>
+        <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+          <span class="chapter__number">17</span>
+          <h2 class="chapter__title">Gita a Venezia con la gang</h2>
+          <p class="chapter__date">✦ 16 Febbraio 2025 ✦</p>
+          <p class="chapter__text">
+              Guarda come sono innamorato perso!
+              (e ci credo guarda con che turbofiga ho a che fare)
+          </p>
+          <div class="chapter__tag-row">
+            <span class="tag">👥 amici</span>
+            <span class="tag">💧 acqua alta</span>
+          </div>
+        </div>
+      </article>
+
+    <!-- ══ 18 ══ -->
+    <article class="chapter" data-index="12">
+        <div class="chapter__media reveal reveal--up">
+          <img src="img/18.jpeg" alt="Il tuo compleanno" class="chapter__img" loading="lazy" />
+          <div class="chapter__img-glow"></div>
+        </div>
+        <div class="chapter__content reveal reveal--up" style="--delay:.12s">
+          <span class="chapter__number">18</span>
+          <h2 class="chapter__title">Il tuo compleanno</h2>
+          <p class="chapter__date">✦ 19 Febbraio 2025 ✦</p>
+          <p class="chapter__text">
+              Anche se sono arrivato in ritardo alla tua festa per colpa di quell'allenamento di merda,
+              è stata una bellissima serata.
+              E tu, come sempre, eri bellissima.
+          </p>
+          <div class="chapter__tag-row">
+            <span class="tag">🎉 festa</span>
+          </div>
+        </div>
+      </article>
+
+    <!-- ══ CITAZIONE FINALE ══ -->
+    <div class="chapter chapter--quote reveal reveal--scale">
+      <blockquote class="quote-block">
+        <span class="quote-block__mark">"</span>
+        <p class="quote-block__text">E questo è solo l'inizio della nostra storia.</p>
+        <cite class="quote-block__cite">Marco &amp; Emma</cite>
+      </blockquote>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__text">con amore, per sempre 💙</p>
+    <a href="index.html" class="site-footer__back">← Torna alla home</a>
+  </footer>
+
+  <script src="js/story.js"></script>
+</body>
+</html>

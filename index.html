@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco & Emma 💕</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Canvas cuori animati sullo sfondo -->
+<canvas id="hearts-canvas"></canvas>
+
+<div class="page-wrapper">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header">
+    <!-- MODIFICA: sottotitolo -->
+    <div class="sub">da quando ci siamo trovati</div>
+    <!-- MODIFICA: titolo principale -->
+    <h1>Il Nostro Amore</h1>
+    <!-- MODIFICA: nomi -->
+    <div class="names">Marco &amp; Emma</div>
+    <div class="heart-divider"><span class="heart-pulse">♥</span></div>
+  </header>
+
+  <!-- ═══════════ CONTATORE PRINCIPALE  aa:mm:dd:hh:mm:ss ═══════════ -->
+  <div class="card">
+    <div class="card-label">✦ Insieme da ✦</div>
+    <div class="main-counter">
+
+      <div class="time-unit">
+        <div class="num" id="mc-years">00</div>
+        <div class="lbl">aa</div>
+      </div>
+      <div class="sep">:</div>
+
+      <div class="time-unit">
+        <div class="num" id="mc-months">00</div>
+        <div class="lbl">mm</div>
+      </div>
+      <div class="sep">:</div>
+
+      <div class="time-unit">
+        <div class="num" id="mc-days">00</div>
+        <div class="lbl">dd</div>
+      </div>
+      <div class="sep">:</div>
+
+      <div class="time-unit">
+        <div class="num" id="mc-hours">00</div>
+        <div class="lbl">hh</div>
+      </div>
+      <div class="sep">:</div>
+
+      <div class="time-unit">
+        <div class="num" id="mc-mins">00</div>
+        <div class="lbl">mm</div>
+      </div>
+      <div class="sep">:</div>
+
+      <div class="time-unit">
+        <div class="num" id="mc-secs">00</div>
+        <div class="lbl">ss</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════ CONTATORI SECONDARI ═══════════ -->
+  <div class="card secondary-counters">
+    <div class="card-label">✦ Il nostro viaggio ✦</div>
+
+    <div class="sec-row">
+      <span class="sec-lbl"><span class="icon">🌙</span> Giorni trascorsi</span>
+      <span class="sec-val" id="sc-days">0</span>
+    </div>
+
+    <div class="sec-row">
+      <span class="sec-lbl"><span class="icon">⏳</span> Ore trascorse</span>
+      <span class="sec-val" id="sc-hours">0</span>
+    </div>
+
+    <div class="sec-row">
+      <span class="sec-lbl"><span class="icon">✨</span> Minuti trascorsi</span>
+      <span class="sec-val" id="sc-mins">0</span>
+    </div>
+
+    <div class="sec-row">
+      <span class="sec-lbl"><span class="icon">💓</span> Secondi trascorsi</span>
+      <span class="sec-val" id="sc-secs">0</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ CONTATORE ANNIVERSARIO ═══════════ -->
+  <div class="card">
+    <!-- MODIFICA: la data anniversario si cambia in index.js (ANNIV_DATE) -->
+    <div class="anniversary-title">💍 Manca al nostro anniversario</div>
+    <div class="anniv-counter">
+
+      <div class="anniv-unit">
+        <div class="anum" id="an-days">--</div>
+        <div class="albl">giorni</div>
+      </div>
+      <div class="anniv-sep">:</div>
+
+      <div class="anniv-unit">
+        <div class="anum" id="an-hours">--</div>
+        <div class="albl">ore</div>
+      </div>
+      <div class="anniv-sep">:</div>
+
+      <div class="anniv-unit">
+        <div class="anum" id="an-mins">--</div>
+        <div class="albl">min</div>
+      </div>
+      <div class="anniv-sep">:</div>
+
+      <div class="anniv-unit">
+        <div class="anum" id="an-secs">--</div>
+        <div class="albl">sec</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════ BOTTONE SECONDA PAGINA ═══════════ -->
+  <div class="btn-wrapper">
+    <!-- MODIFICA: cambia href per collegare la seconda pagina -->
+    <a href="story.html" class="btn-main">
+      ♡ &nbsp; Il nostro spazio &nbsp; ♡
+    </a>
+  </div>
+
+  <footer class="footer">con amore, per sempre ♥</footer>
+
+</div>
+
+<!-- JS caricato per ultimo, dopo il DOM -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

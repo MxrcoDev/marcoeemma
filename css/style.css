@@ -1,0 +1,405 @@
+/* ============================================================
+   index.css — Marco & Emma · Homepage
+   Tema: romantico, rosa/rosso, cuori
+   ============================================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+   /* ────────────────────────────────────────────────────────────
+      VARIABILI — modifica qui colori e tema
+      ──────────────────────────────────────────────────────────── */
+   :root {
+     --rose:      #f9a8c9;
+     --rose-dark: #e05c85;
+     --red:       #c0395b;
+     --red-deep:  #8b1a34;
+     --white:     #fff8fa;
+     --card-bg:   rgba(255,255,255,0.18);
+     --shadow:    rgba(176,40,80,0.18);
+     --gold:      #f7d7a4;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      RESET & BASE
+      ──────────────────────────────────────────────────────────── */
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   
+   html, body {
+     overflow-x: hidden;
+     width: 100%;
+     max-width: 100%;
+   }
+   
+   html { scroll-behavior: smooth; }
+   
+   body {
+     min-height: 100vh;
+     font-family: 'Cormorant Garamond', serif;
+     background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 30%, #fce4ec 60%, #fff0f3 100%);
+     color: var(--red-deep);
+     position: relative;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      CANVAS CUORI SFONDO
+      ──────────────────────────────────────────────────────────── */
+   #hearts-canvas {
+     position: fixed;
+     top: 0; left: 0;
+     width: 100%; height: 100%;
+     pointer-events: none;
+     z-index: 0;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      WRAPPER PRINCIPALE
+      ──────────────────────────────────────────────────────────── */
+   .page-wrapper {
+     position: relative;
+     z-index: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 2rem 1rem 4rem;
+     gap: 2rem;
+     max-width: 680px;
+     margin: 0 auto;
+     width: 100%;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      HEADER
+      ──────────────────────────────────────────────────────────── */
+   .header {
+     text-align: center;
+     padding-top: 2rem;
+     width: 100%;
+   }
+   
+   .header .sub {
+     font-style: italic;
+     font-size: clamp(0.85rem, 3vw, 1.05rem);
+     color: var(--rose-dark);
+     letter-spacing: 0.25em;
+     text-transform: uppercase;
+     margin-bottom: 0.5rem;
+     opacity: 0;
+     animation: fadeUp 1s ease 0.2s forwards;
+   }
+   
+   .header h1 {
+     font-family: 'Playfair Display', serif;
+     font-size: clamp(2.4rem, 10vw, 4.2rem);
+     font-weight: 700;
+     line-height: 1.1;
+     background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 40%, var(--rose-dark) 70%, var(--red-deep) 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     opacity: 0;
+     animation: fadeUp 1s ease 0.5s forwards;
+     word-break: break-word;
+   }
+   
+   .header .names {
+     font-family: 'Playfair Display', serif;
+     font-style: italic;
+     font-size: clamp(1.2rem, 5vw, 2rem);
+     color: var(--rose-dark);
+     margin-top: 0.4rem;
+     opacity: 0;
+     animation: fadeUp 1s ease 0.8s forwards;
+   }
+   
+   .heart-divider {
+     font-size: 1.6rem;
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+     justify-content: center;
+     margin-top: 0.8rem;
+     opacity: 0;
+     animation: fadeUp 1s ease 1s forwards;
+   }
+   
+   .heart-divider::before,
+   .heart-divider::after {
+     content: '';
+     display: block;
+     height: 1px;
+     width: 60px;
+     background: linear-gradient(to right, transparent, var(--rose-dark));
+   }
+   .heart-divider::after { background: linear-gradient(to left, transparent, var(--rose-dark)); }
+   
+   .heart-pulse {
+     display: inline-block;
+     animation: pulse 1.4s ease-in-out infinite;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      CARD GLASS MORPHISM
+      ──────────────────────────────────────────────────────────── */
+   .card {
+     width: 100%;
+     background: var(--card-bg);
+     backdrop-filter: blur(16px);
+     -webkit-backdrop-filter: blur(16px);
+     border: 1.5px solid rgba(255,255,255,0.55);
+     border-radius: 24px;
+     padding: 1.8rem 1.4rem;
+     box-shadow: 0 8px 32px var(--shadow), 0 1px 0 rgba(255,255,255,0.6) inset;
+     opacity: 0;
+     transform: translateY(24px);
+     animation: slideUp 0.9s cubic-bezier(.22,1,.36,1) forwards;
+     overflow: hidden;
+   }
+   
+   .card:nth-child(2) { animation-delay: 0.3s; }
+   .card:nth-child(3) { animation-delay: 0.5s; }
+   .card:nth-child(4) { animation-delay: 0.7s; }
+   
+   .card-label {
+     font-style: italic;
+     font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+     letter-spacing: 0.22em;
+     text-transform: uppercase;
+     color: var(--rose-dark);
+     text-align: center;
+     margin-bottom: 1.2rem;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      CONTATORE PRINCIPALE  aa:mm:dd:hh:mm:ss
+      ──────────────────────────────────────────────────────────── */
+   .main-counter {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     gap: clamp(0.2rem, 1.5vw, 0.8rem);
+     flex-wrap: nowrap;
+     width: 100%;
+   }
+   
+   .time-unit {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 0.3rem;
+     flex-shrink: 0;
+   }
+   
+   .time-unit .num {
+     font-family: 'Playfair Display', serif;
+     font-size: clamp(1.3rem, 6vw, 3rem);
+     font-weight: 700;
+     color: var(--red);
+     line-height: 1;
+     min-width: clamp(1.6rem, 7vw, 3.5rem);
+     text-align: center;
+     text-shadow: 0 2px 12px rgba(192,57,91,0.2);
+     transition: transform 0.2s ease;
+   }
+   
+   .time-unit .num.tick {
+     animation: tick 0.25s ease;
+   }
+   
+   .time-unit .lbl {
+     font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+     letter-spacing: 0.15em;
+     text-transform: uppercase;
+     color: var(--rose-dark);
+   }
+   
+   .sep {
+     font-family: 'Playfair Display', serif;
+     font-size: clamp(1.1rem, 5vw, 2.4rem);
+     color: var(--rose-dark);
+     line-height: 1;
+     padding-top: 0.05em;
+     opacity: 0.6;
+     flex-shrink: 0;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      CONTATORI SECONDARI
+      ──────────────────────────────────────────────────────────── */
+   .secondary-counters {
+     display: flex;
+     flex-direction: column;
+     gap: 0.9rem;
+   }
+   
+   .sec-row {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0.65rem 1rem;
+     background: rgba(255,255,255,0.35);
+     border-radius: 14px;
+     border: 1px solid rgba(255,255,255,0.5);
+     gap: 0.5rem;
+   }
+   
+   .sec-lbl {
+     font-style: italic;
+     font-size: clamp(0.9rem, 3vw, 1.1rem);
+     color: var(--red-deep);
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+   }
+   
+   .sec-lbl .icon { font-size: 1.1rem; }
+   
+   .sec-val {
+     font-family: 'Playfair Display', serif;
+     font-size: clamp(1.2rem, 5vw, 1.8rem);
+     font-weight: 700;
+     color: var(--red);
+     text-shadow: 0 1px 8px rgba(192,57,91,0.15);
+     white-space: nowrap;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      CONTATORE ANNIVERSARIO
+      ──────────────────────────────────────────────────────────── */
+   .anniversary-title {
+     text-align: center;
+     font-family: 'Playfair Display', serif;
+     font-size: clamp(1rem, 4vw, 1.4rem);
+     color: var(--red-deep);
+     margin-bottom: 0.6rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.4rem;
+   }
+   
+   .anniv-counter {
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+     gap: clamp(0.3rem, 2vw, 1rem);
+     flex-wrap: nowrap;
+   }
+   
+   .anniv-unit {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 0.25rem;
+   }
+   
+   .anniv-unit .anum {
+     font-family: 'Playfair Display', serif;
+     font-size: clamp(1.5rem, 7vw, 2.8rem);
+     font-weight: 700;
+     color: var(--red-deep);
+     line-height: 1;
+   }
+   
+   .anniv-unit .albl {
+     font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+     letter-spacing: 0.16em;
+     text-transform: uppercase;
+     color: var(--rose-dark);
+   }
+   
+   .anniv-sep {
+     font-size: clamp(1.2rem, 5vw, 2.2rem);
+     color: var(--rose-dark);
+     line-height: 1;
+     padding-top: 0.05em;
+     opacity: 0.5;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      BOTTONE
+      ──────────────────────────────────────────────────────────── */
+   .btn-wrapper {
+     display: flex;
+     justify-content: center;
+     padding: 0.5rem 0 1rem;
+   }
+   
+   /* MODIFICA: cambia href nell'HTML per collegare la seconda pagina */
+   .btn-main {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.6rem;
+     text-decoration: none;
+     font-size: clamp(1rem, 3.5vw, 1.2rem);
+     letter-spacing: 0.12em;
+     color: var(--white);
+     background: linear-gradient(135deg, var(--red) 0%, var(--rose-dark) 60%, var(--red-deep) 100%);
+     padding: 0.85rem 2.4rem;
+     border-radius: 50px;
+     border: none;
+     box-shadow: 0 4px 20px rgba(192,57,91,0.35), 0 1px 0 rgba(255,255,255,0.25) inset;
+     cursor: pointer;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+     position: relative;
+     overflow: hidden;
+   }
+   
+   .btn-main::after {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+     border-radius: inherit;
+   }
+   
+   .btn-main:hover {
+     transform: translateY(-3px) scale(1.03);
+     box-shadow: 0 8px 28px rgba(192,57,91,0.45), 0 1px 0 rgba(255,255,255,0.25) inset;
+   }
+   .btn-main:active { transform: translateY(0) scale(0.98); }
+   
+   /* ────────────────────────────────────────────────────────────
+      FOOTER
+      ──────────────────────────────────────────────────────────── */
+   .footer {
+     text-align: center;
+     font-style: italic;
+     font-size: 0.82rem;
+     color: var(--rose-dark);
+     opacity: 0.7;
+     padding-bottom: 1rem;
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      KEYFRAMES
+      ──────────────────────────────────────────────────────────── */
+   @keyframes fadeUp {
+     from { opacity: 0; transform: translateY(16px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+   
+   @keyframes slideUp {
+     from { opacity: 0; transform: translateY(24px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+   
+   @keyframes pulse {
+     0%, 100% { transform: scale(1); }
+     50%       { transform: scale(1.22); }
+   }
+   
+   @keyframes tick {
+     0%   { transform: scale(1.18); }
+     100% { transform: scale(1); }
+   }
+   
+   /* ────────────────────────────────────────────────────────────
+      RESPONSIVE
+      ──────────────────────────────────────────────────────────── */
+   @media (min-width: 480px) {
+     .page-wrapper { padding: 2.5rem 1.8rem 4rem; }
+   }
+   
+   @media (min-width: 680px) {
+     .page-wrapper { padding: 3rem 2rem 5rem; }
+   }
